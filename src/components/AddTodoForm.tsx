@@ -13,7 +13,7 @@ const AddTodoForm: FC<AddTodoFormProps> = ({ addTodo }) => {
   }
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
-    e.preventDefault
+    e.preventDefault()
     addTodo(newTodo)
   }
 
