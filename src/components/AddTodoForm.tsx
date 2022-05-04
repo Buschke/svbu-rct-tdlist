@@ -21,7 +21,7 @@ const AddTodoForm: FC<AddTodoFormProps> = ({ addTodo }) => {
     <div className='AddTodoForm'>AddTodoForm 
       <form>
         <input type="text" value={newTodo} onChange={handleChange} />
-        <button type='submit' onClick={handleSubmit}>Add to TODO</button>
+        <button type="submit" onClick={handleSubmit}>Add to TODO</button>
       </form>
     </div>
   )
