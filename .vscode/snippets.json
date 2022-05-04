@@ -1,0 +1,67 @@
+{
+  "TagWrapper": {
+    "prefix": "_w",
+    "body": ["<$1>$TM_SELECTED_TEXT$0</$1>"],
+    "description": "Creates open and a closing tag around selected text"
+  },
+  "Import Hooks": {
+    "prefix": ["ih", "import-hooks"],
+    "body": [
+      "import { createContext, FC, useCallback, useContext, useDebugValue, useEffect, useImperativeHandle, useLayoutEffect, useMemo, useReducer, useRef, useState } from 'react'"
+    ],
+    "description": "'Import all React Hooks"
+  },
+  "typescriptReactArrowFunctionExportComponent": {
+    "prefix": ["tssafce"],
+    "body": [
+      "import { FC } from 'react'",
+      "//import './${1:$TM_FILENAME_BASE}.scss'",
+      "",
+      "const ${1:$TM_FILENAME_BASE}: FC<{ title: string }> = (props) => {",
+      "\treturn (",
+      "\t\t<div className='${1:$TM_FILENAME_BASE}'>${1:$TM_FILENAME_BASE} {props.title}$0</div>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:$TM_FILENAME_BASE}"
+    ],
+    "description": "Creates a React Arrow Function Component with ES7 module system, adapted by Sven Buschke"
+  },
+  "useState": {
+    "prefix": ["tsuseStateSnippet"],
+    "body": [
+      "const [ ${1:variable}, set${1/(.*)/${1:/capitalize}/} ] = useState<${2:type}>(${3:initialVal})"
+    ],
+    "description": "UseState Snippet, adapted for TypeScript by Sven Buschke"
+  },
+  "useEffect": {
+    "prefix": ["tsuseEffect"],
+    "body": ["useEffect(() => {", "\t$0", "", "}, [${1:returnValue}])"],
+    "description": "UseEffect Snippet, adapted for TypeScript by Sven Buschke"
+  },
+  "var set getx": {
+    "prefix": "varsetgetx",
+    "body": [
+      "${1:int} ${2:VARNM};",
+      "$1 ${2/(.*)/${1:/downcase}/}(){return $2;}",
+      "void ${2/(.*)/${1:/downcase}/}($1 val){$2 = val;}"
+    ],
+    "description": "Example of downcasing"
+  }
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+}
