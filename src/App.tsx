@@ -19,7 +19,7 @@ const App: FC<{ title: string }> = () => {
           completed: !todo.completed,
         }
       }
-      return todo;
+      return todo
     })
     setTodos(newTodos)
   }
