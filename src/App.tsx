@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import './App.scss'
+import AddTodoForm from './components/AddTodoForm';
 import TodoList from './components/TodoList'
 
 const initialTodos: Array<Todo> = [
@@ -22,11 +23,17 @@ const App: FC<{ title: string }> = () => {
     })
     setTodos(newTodos)
   }
+
+  const addTodo: AddTodo = newTodo => {
+    setTodos([...todos, {text: newTodo, completed: false}])
+  }
+
   return (
     <div className="App p-5 m-5 border-double hover:border-dotted">
       TD List
       <React.Fragment>
         <TodoList todos={todos} toggleTodo={toggleTodo} />
+        <AddTodoForm />
       </React.Fragment>
     </div>
   )
