@@ -33,7 +33,7 @@ const App: FC<{ title: string }> = () => {
       TD List
       <React.Fragment>
         <TodoList todos={todos} toggleTodo={toggleTodo} />
-        <AddTodoForm />
+        <AddTodoForm addTodo={addTodo}/>
       </React.Fragment>
     </div>
   )
