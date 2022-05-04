@@ -10,7 +10,7 @@ interface TodoListItemProps {
 const TodoList: FC<TodoListItemProps> = ({ todos, toggleTodo }) => {
   return (<ul>
     {todos.map(todo => {
-      return <TodoListItem todo={todo} toggleTodo={toggleTodo} />
+      return <TodoListItem key={todo.text} todo={todo} toggleTodo={toggleTodo} />
     })}
   </ul>
   )
