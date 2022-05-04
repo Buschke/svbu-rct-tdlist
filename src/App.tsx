@@ -25,7 +25,7 @@ const App: FC<{ title: string }> = () => {
   }
 
   const addTodo: AddTodo = newTodo => {
-    setTodos([...todos, {text: newTodo, completed: false}])
+    newTodo.trim() !== '' && setTodos([...todos, {text: newTodo, completed: false}])
   }
 
   return (

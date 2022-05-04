@@ -15,6 +15,7 @@ const AddTodoForm: FC<AddTodoFormProps> = ({ addTodo }) => {
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
     addTodo(newTodo)
+    setNewTodo('')
   }
 
   return (
